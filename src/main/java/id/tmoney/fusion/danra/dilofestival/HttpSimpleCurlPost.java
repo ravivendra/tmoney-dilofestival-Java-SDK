@@ -12,20 +12,19 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.AbstractHttpEntity;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.json.simple.JSONObject;
 
 public class HttpSimpleCurlPost {
-    private static String BASE_API_URL = "https://api.mainapi.net/tmoney/1.0.0/";
-    private static String BASE_API_KEY = "3e60e5d18c9a83b4c4d89961aaf8f25c";
+    final private static String BASE_API_URL = "https://api.mainapi.net/tmoney/1.0.0/";
+    final private static String BASE_API_KEY = "_SET_WITH_YOUR_OWN_KEY_";
     
     public static void main(String[] args) {
-        String userName = "tmoney.testing1@gmail.com";
-        String password = "T3lkom2016";
-        String terminal = "WEB-TMONEY";
+        String userName = "YOUR_OWN_EMAIL";
+        String password = "YOUR_OWN_PASSWORD";
+        String terminal = "ASKED_TO_INSTRUCTOR";
         
         JSONObject signIn = new JSONObject();
         
@@ -44,7 +43,7 @@ public class HttpSimpleCurlPost {
     HttpPost setConnectivity(String apiUrl) {
         HttpPost httpPost = new HttpPost(apiUrl);
         
-        // httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
         // httpPost.setHeader("Accept", "application/json");
         httpPost.setHeader("Authorization", "Bearer " + BASE_API_KEY);
                 
