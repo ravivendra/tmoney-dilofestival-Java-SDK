@@ -58,7 +58,7 @@ public class HttpSimpleCurlPost {
         HttpPost httpPost = new HttpPost(apiUrl);
         
         httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-        // httpPost.setHeader("Accept", "application/json");
+        httpPost.setHeader("Accept", "application/json");
         httpPost.setHeader("Authorization", "Bearer " + BASE_API_KEY);
                 
         return httpPost;
