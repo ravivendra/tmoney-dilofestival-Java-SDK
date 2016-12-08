@@ -19,12 +19,26 @@ import org.json.simple.JSONObject;
 
 public class HttpSimpleCurlPost {
     final private static String BASE_API_URL = "https://api.mainapi.net/tmoney/1.0.0/";
-    final private static String BASE_API_KEY = "_SET_WITH_YOUR_OWN_KEY_";
+    final private static String BASE_API_KEY = "_SET_IT_WITH_YOUR_OWN_KEY_";
     
     public static void main(String[] args) {
-        String userName = "YOUR_OWN_EMAIL";
-        String password = "YOUR_OWN_PASSWORD";
-        String terminal = "ASKED_TO_INSTRUCTOR";
+        String userName = "_YOUR_OWN_TMONEY_ACCOUNT_";
+        String password = "_YOUR_OWN_TMONEY_PASSWORD_";
+        String terminal = "_ASKED_TO_INSTRUCTOR_";
+        
+        if(BASE_API_KEY.equalsIgnoreCase("") || BASE_API_KEY.equalsIgnoreCase("_SET_IT_WITH_YOUR_OWN_KEY_")) {
+            System.out.println("Set your own key from our system (www.mainapi.net)");
+            return;
+        } else if(userName.equalsIgnoreCase("") || userName.equalsIgnoreCase("_YOUR_OWN_TMONEY_ACCOUNT_")) {
+            System.out.println("Set your own T-MONEY account");
+            return;
+        } else if(password.equalsIgnoreCase("") || password.equalsIgnoreCase("_YOUR_OWN_TMONEY_PASSWORD_")) {
+            System.out.println("Set your own T-MONEY password");
+            return;
+        } else if(terminal.equalsIgnoreCase("") || terminal.equalsIgnoreCase("_ASKED_TO_INSTRUCTOR_")) {
+            System.out.println("Asked for the Terminal to the instructor");
+            return;
+        }
         
         JSONObject signIn = new JSONObject();
         
